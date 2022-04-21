@@ -42,5 +42,20 @@ namespace PlayasLimpiasApp.Services
             var events = await db.Table<Event>().ToListAsync();
             return events;
         }
+
+        public static async Task<IEnumerable<Event>> GetMyEvents()
+        {
+            await Init();
+            var events = await (from e in db.Table<Event>()
+                               where e.AmIvolunteer == true
+                               select e).ToListAsync();
+            return events;
+        }
+
+        public static async Task UpdateEvent(Event e)
+        {
+            await Init();
+            await db.UpdateAsync(e);
+        }
     }
 }

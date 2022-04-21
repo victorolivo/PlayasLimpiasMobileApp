@@ -51,6 +51,7 @@ namespace PlayasLimpiasApp.ViewModels
             VolunteerCommand = new AsyncCommand<Event>(Volunteer);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Event>(Remove);
+            Refresh();
         }
 
         private async Task Remove(Event e)
@@ -59,11 +60,16 @@ namespace PlayasLimpiasApp.ViewModels
             await Refresh();
         }
 
-        private async Task Volunteer(Event e)
+        public async Task Volunteer(Event e)
         {
-            if (e != null)
+            if (e.AmIvolunteer == true)
+                await Application.Current.MainPage.DisplayAlert("Slowdown cowboy", $"You are alredy a volunteer for this event.", "Ok");
+            else if (e != null)
             {
-                await Application.Current.MainPage.DisplayAlert("Thanks for Volunteering!", $"You are now a volunteer for {e.Name} event.", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Thanks for Volunteering!", $"You are now a volunteer for '{e.Name}' event.", "Ok");
+
+                e.AmIvolunteer = true;
+                await PlayasLimpiasDB.UpdateEvent(e);
             }
         }
 
@@ -75,6 +81,7 @@ namespace PlayasLimpiasApp.ViewModels
                 Location = "Fajardo, PR",
                 NumVolunteersReq = 18,
                 Deadline = DateTime.Now
+
             };
 
             await PlayasLimpiasDB.AddEvent(e);
@@ -83,23 +90,8 @@ namespace PlayasLimpiasApp.ViewModels
 
         private async Task Add()
         {
-            var name = await App.Current.MainPage.DisplayPromptAsync("Name of Event", "Name:", "Ok");
-            var image = await App.Current.MainPage.DisplayPromptAsync("Image", "Image:", "Ok");
-            var location = await App.Current.MainPage.DisplayPromptAsync("Loaction", "Beach Loaction:", "Ok");
-            var numVol = await App.Current.MainPage.DisplayPromptAsync("Volunteers", "Volunteers Required for event: ", "Ok");
-            //var deadline = await App.Current.MainPage.DisplayPromptAsync("Deadline", "Event Date: ", "Ok");
-            int numVolInt = Convert.ToInt32(numVol);
-            //DateTime deadlineDate = Convert.ToDateTime(deadline);
-
-            Event e = new Event {
-                Name = name,
-                Image = image,
-                Location = location,
-                NumVolunteersReq = numVolInt,
-                Deadline = DateTime.Now
-            };
-            await PlayasLimpiasDB.AddEvent(e);
-            await Refresh();
+            var route = $"{nameof(NewEventPage)}";
+            await Shell.Current.GoToAsync(route);
         }
 
         private async Task Refresh()

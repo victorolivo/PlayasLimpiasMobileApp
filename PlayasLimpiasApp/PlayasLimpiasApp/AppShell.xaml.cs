@@ -11,6 +11,7 @@ namespace PlayasLimpiasApp
 
             Routing.RegisterRoute(nameof(NewEventPage), typeof(NewEventPage));
             Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
+            Routing.RegisterRoute(nameof(EventsPage), typeof(EventsPage));
         }
     }
 }

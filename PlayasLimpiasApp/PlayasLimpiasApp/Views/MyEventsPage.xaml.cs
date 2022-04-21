@@ -16,5 +16,11 @@ namespace PlayasLimpiasApp.Views
         {
             InitializeComponent();
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var route = $"{nameof(EventsPage)}";
+            await Shell.Current.GoToAsync(route);
+        }
     }
 }

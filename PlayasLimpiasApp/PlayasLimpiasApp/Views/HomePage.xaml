@@ -29,7 +29,7 @@
 
                 <StackLayout Orientation="Horizontal" Margin="20,100" Grid.Row="2" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2">
                     <Button Margin="0,0,40,0"  Text="Rescue a Beach" Clicked="Button_Clicked"/>
-                    <Button Text="View Events"/>
+                    <Button Text="View Events" Clicked="Button_Clicked_1"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3" Grid.ColumnSpan="2" Margin="0,50,0,30">
@@ -38,7 +38,7 @@
 
                 <Frame Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,50" Opacity=".9" BackgroundColor="#CC000000" CornerRadius="5">
                     <Label Text="Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum" 
-                           HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Wheat" FontSize="18"/>
+                           FontFamily="kg" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Wheat" FontSize="16"/>
                 </Frame>
                 
                 <StackLayout Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">

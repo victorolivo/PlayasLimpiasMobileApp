@@ -1,13 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:PlayasLimpiasApp.ViewModels"
              x:Class="PlayasLimpiasApp.Views.NewEventPage"
-             BackgroundColor="Beige">
+             BackgroundColor="Beige"
+             Shell.PresentationMode="Modal"
+             Title="Create Event">
+
+    <ContentPage.BindingContext>
+        <viewmodels:NewEventViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Beach Rescue" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
-            <Label Text="Create an event to give more people the opportunity to volunteer and help keep our coast line clean." Style="{StaticResource NText}"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Beach Rescue" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15,15,15,0"/>
+                <Label Text="Create an event to give more people the opportunity to volunteer and help keep our coast line clean." Style="{StaticResource NText}"/>
+                <Label Text="Name Your Event:" Margin="15,10,0,0" FontSize="14" FontFamily="kg"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Entry HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding Name}"/>
+                </Frame>
+                <Label Text="Upload An Image (optional):" Margin="15,10,0,0" FontSize="14" FontFamily="kg"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Picker Title="Sample pictures" BackgroundColor="Wheat" SelectedItem="{Binding Image}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>db1</x:String>
+                                <x:String>db2</x:String>
+                                <x:String>db3</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+                <Label Text="Location:" Margin="15,10,0,0" FontSize="14" FontFamily="kg"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Picker Title="Select Beach" BackgroundColor="Wheat" SelectedItem="{Binding Location}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Playa Sucia, Cabo Rojo</x:String>
+                                <x:String>Playa Flamenca, Culebra</x:String>
+                                <x:String>Poza de las Mujeres, Manati</x:String>
+                                <x:String>Crash Boat, Aguadilla</x:String>
+                                <x:String>Isla Verde, San Juan</x:String>
+                                <x:String>Playa Santa, Guanica</x:String>
+                                <x:String>Balneario Cerro Gordo, Vega Alta</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Frame>
+                <Label Text="Estimated Number Of Volunteers Required:" Margin="15,10,0,0" FontSize="14" FontFamily="kg"/>
+                <Frame Padding="0" Margin="10,0">
+                    <Entry Keyboard="Numeric" HorizontalOptions="FillAndExpand" BackgroundColor="Wheat" Text="{Binding NumVolunteersReq}"/>
+                </Frame>
+                <Label Text="Date Of Event" Margin="15,10,0,0" FontSize="14" FontFamily="kg"/>
+                <Frame Padding="0" Margin="10,0">
+                    <DatePicker Format="D" VerticalOptions="CenterAndExpand" BackgroundColor="Wheat" Date="{Binding Deadline}"/>
+                </Frame>
+                <Label Text="Count Me In! (Volunteer For This Event):" Margin="15,15,0,0" FontSize="14" FontFamily="kg"/>
+                <Switch Margin="10" IsToggled="{Binding AmIvolunteer}" HorizontalOptions="Start"/>
+                <Button Text="Submit" Margin="30" HorizontalOptions="EndAndExpand" BackgroundColor="Chocolate" Command="{Binding SaveCommand}"/>
+            </StackLayout>
             
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

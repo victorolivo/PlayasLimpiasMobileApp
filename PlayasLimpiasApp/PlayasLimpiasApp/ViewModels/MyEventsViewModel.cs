@@ -40,7 +40,7 @@ namespace PlayasLimpiasApp.ViewModels
         }
         public MyEventsViewModel()
         {
-            MyEvents = new ObservableCollection<Event>();
+             MyEvents = new ObservableCollection<Event>();
             //loadSample();
 
             //Initialize commands
@@ -48,11 +48,13 @@ namespace PlayasLimpiasApp.ViewModels
             SelectedCommand = new AsyncCommand<object>(Selected);
             AddCommand = new AsyncCommand(Add);
             RemoveCommand = new AsyncCommand<Event>(Remove);
+            Refresh();
         }
 
         private async Task Remove(Event e)
         {
-            await PlayasLimpiasDB.RemoveEvent(e.Id);
+            e.AmIvolunteer = false;
+            await PlayasLimpiasDB.UpdateEvent(e);
             await Refresh();
         }
 
@@ -101,7 +103,7 @@ namespace PlayasLimpiasApp.ViewModels
 
             MyEvents.Clear();
 
-            IEnumerable<Event> updatedEventsList = await PlayasLimpiasDB.GetAllEvents();
+            IEnumerable<Event> updatedEventsList = await PlayasLimpiasDB.GetMyEvents();
 
             foreach (var e in updatedEventsList)
             {

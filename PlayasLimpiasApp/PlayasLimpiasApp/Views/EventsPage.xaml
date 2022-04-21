@@ -18,6 +18,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create New Event" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
         <StackLayout>
@@ -58,9 +62,11 @@
                                     <StackLayout>
                                         <Label Text="{Binding Name}" FontSize="20"/>
                                         <Label Text="{Binding Location}"/>
-                                        <Label Text="{Binding Id}" FontSize="Small"/>
+                                        <Label Text="{Binding Deadline}" FontSize="Small"/>
                                     </StackLayout>
                                     <Button Text="Volunteer" 
+                                            x:Name="volunteerBtn"
+                                            Clicked="volunteerBtn_Clicked"
                                             VerticalOptions="Center" 
                                             HorizontalOptions="EndAndExpand"
                                             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:EventsViewModel}},
@@ -73,7 +79,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Footer>
-                    <Button Text="Load More" HorizontalOptions="CenterAndExpand" Margin="20"/>
+                    <Button Text="My Events" HorizontalOptions="CenterAndExpand" Margin="20" Clicked="Button_Clicked"/>
                 </ListView.Footer>
             </ListView>
             

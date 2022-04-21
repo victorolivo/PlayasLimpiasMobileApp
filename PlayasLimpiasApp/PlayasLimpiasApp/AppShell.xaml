@@ -85,5 +85,8 @@
     <FlyoutItem Title="Events" Icon="icon_about.png">
         <ShellContent Route="EventsPage" ContentTemplate="{DataTemplate local:EventsPage}" />
     </FlyoutItem>
+    <FlyoutItem Title="MyEvents" Icon="icon_about.png">
+        <ShellContent Route="MyEventsPage" ContentTemplate="{DataTemplate local:MyEventsPage}" />
+    </FlyoutItem>
 
 </Shell>

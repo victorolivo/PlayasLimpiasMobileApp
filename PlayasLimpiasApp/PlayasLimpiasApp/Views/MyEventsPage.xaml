@@ -22,9 +22,9 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Events" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
+            <Label Text="My Events" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
 
-            <ListView ItemsSource="{Binding MyEvents}" 
+            <ListView ItemsSource="{Binding MyEvents}"
                       HasUnevenRows="True"
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -44,10 +44,10 @@
                         <ViewCell>
 
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Volunteer For This Event"
+                                <MenuItem Text="Unvolunteer for this Event"
                                           Command="{Binding
-                                    Source={x:Reference EventsPageDesignName},
-                                    Path=BindingContext.VolunteerCommand}"
+                                    Source={x:Reference MyEventsPageDesignName},
+                                    Path=BindingContext.RemoveCommand}"
                                           CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
 
@@ -61,11 +61,11 @@
                                         <Label Text="{Binding Location}"/>
                                         <Label Text="{Binding Id}" FontSize="Small"/>
                                     </StackLayout>
-                                    <Button Text="Volunteer" 
+                                    <Button Text="Unvolunteer" 
                                             VerticalOptions="Center" 
                                             HorizontalOptions="EndAndExpand"
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:EventsViewModel}},
-                                            Path=VolunteerCommand}"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MyEventsViewModel}},
+                                            Path=RemoveCommand}"
                                             CommandParameter="{Binding .}"/>
                                 </StackLayout>
                             </Grid>
@@ -74,7 +74,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Footer>
-                    <Button Text="Load More" HorizontalOptions="CenterAndExpand" Margin="20"/>
+                    <Button Text="More Events" HorizontalOptions="CenterAndExpand" Margin="20" Clicked="Button_Clicked"/>
                 </ListView.Footer>
             </ListView>
 

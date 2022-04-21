@@ -18,6 +18,6 @@ namespace PlayasLimpiasApp.Models
         public string Location { get; set; }
         public int NumVolunteersReq { get; set; }
         public DateTime Deadline { get; set; }
-        
+        public bool AmIvolunteer { get; set; } = false;
     }
 }

@@ -29,7 +29,7 @@
             </Style>
 
             <Style TargetType="Label" x:Key="NText">
-                <Setter Property="Margin" Value="20"/>
+                <Setter Property="Margin" Value="10"/>
                 <Setter Property="TextColor" Value="Chocolate" />
                 <Setter Property="FontFamily" Value="kg"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
