@@ -21,6 +21,11 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="kg"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            
             <Style TargetType="Label" x:Key="HeaderLBL">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="Wheat"/>

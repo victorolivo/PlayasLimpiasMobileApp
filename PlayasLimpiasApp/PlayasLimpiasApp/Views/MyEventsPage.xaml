@@ -53,13 +53,13 @@
 
                             <Grid Padding="10">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame Padding="0" CornerRadius="6" IsClippedToBounds="True">
+                                    <Frame Padding="0" CornerRadius="6" IsClippedToBounds="True" BackgroundColor="Wheat">
                                         <Image Source="{Binding Image}" WidthRequest="100"/>
                                     </Frame>
                                     <StackLayout>
-                                        <Label Text="{Binding Name}" FontSize="20"/>
+                                        <Label Text="{Binding Name}" FontSize="16"/>
                                         <Label Text="{Binding Location}"/>
-                                        <Label Text="{Binding Id}" FontSize="Small"/>
+                                        <Label Text="{Binding DateFormatted}" FontSize="12"/>
                                     </StackLayout>
                                     <Button Text="Unvolunteer" 
                                             VerticalOptions="Center" 

@@ -121,8 +121,6 @@ namespace PlayasLimpiasApp.ViewModels
 
             SelectedEvent = null;
 
-            await Application.Current.MainPage.DisplayAlert("Selection TEST", $"You have selected {e.Name} event.", "Ok");
-
 
         }
     }

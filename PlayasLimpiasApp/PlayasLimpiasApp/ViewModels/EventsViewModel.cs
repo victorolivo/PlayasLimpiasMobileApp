@@ -23,7 +23,8 @@ namespace PlayasLimpiasApp.ViewModels
         public AsyncCommand AddCommand { get; }
         public AsyncCommand<Event> RemoveCommand { get; }
         bool isBusy;
-        public bool IsBusy {
+        public bool IsBusy 
+        {
             get => isBusy;
             set
             {
@@ -32,7 +33,8 @@ namespace PlayasLimpiasApp.ViewModels
             }
         }
         Event selectedEvent;
-        public Event SelectedEvent {
+        public Event SelectedEvent 
+        {
             get => selectedEvent;
             set
             {
@@ -63,7 +65,9 @@ namespace PlayasLimpiasApp.ViewModels
         public async Task Volunteer(Event e)
         {
             if (e.AmIvolunteer == true)
+            {
                 await Application.Current.MainPage.DisplayAlert("Slowdown cowboy", $"You are alredy a volunteer for this event.", "Ok");
+            }    
             else if (e != null)
             {
                 await Application.Current.MainPage.DisplayAlert("Thanks for Volunteering!", $"You are now a volunteer for '{e.Name}' event.", "Ok");
@@ -73,20 +77,20 @@ namespace PlayasLimpiasApp.ViewModels
             }
         }
 
-        private async Task loadSample()
-        {
-            Event e = new Event { 
-                Name = "Playa en Fajardo necesita ayuda",
-                Image = "db1",
-                Location = "Fajardo, PR",
-                NumVolunteersReq = 18,
-                Deadline = DateTime.Now
+        //private async Task loadSample()
+        //{
+        //    Event e = new Event { 
+        //        Name = "Playa en Fajardo necesita ayuda",
+        //        Image = "db1",
+        //        Location = "Fajardo, PR",
+        //        NumVolunteersReq = 18,
+        //        Deadline = DateTime.Now
 
-            };
+        //    };
 
-            await PlayasLimpiasDB.AddEvent(e);
+        //    await PlayasLimpiasDB.AddEvent(e);
             
-        }
+        //}
 
         private async Task Add()
         {
@@ -119,8 +123,6 @@ namespace PlayasLimpiasApp.ViewModels
                 return;
 
             SelectedEvent = null;
-
-            await Application.Current.MainPage.DisplayAlert("Selection TEST", $"You have selected {e.Name} event.", "Ok");
 
 
         }

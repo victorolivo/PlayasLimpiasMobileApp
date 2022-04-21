@@ -23,9 +23,6 @@ namespace PlayasLimpiasApp.Views
             await Shell.Current.GoToAsync(route);
         }
 
-        private void volunteerBtn_Clicked(object sender, EventArgs e)
-        {
-            
-        }
+
     }
 }
