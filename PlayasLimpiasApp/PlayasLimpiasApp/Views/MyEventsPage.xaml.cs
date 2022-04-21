@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace PlayasLimpiasApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class MyEventsPage : ContentPage
     {
-        public HomePage()
+        public MyEventsPage()
         {
             InitializeComponent();
-        }
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            var route = $"{nameof(NewEventPage)}";
-            await Shell.Current.GoToAsync(route);
         }
     }
 }

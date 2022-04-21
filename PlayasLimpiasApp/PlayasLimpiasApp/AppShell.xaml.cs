@@ -10,6 +10,7 @@ namespace PlayasLimpiasApp
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(NewEventPage), typeof(NewEventPage));
+            Routing.RegisterRoute(nameof(EventDetailsPage), typeof(EventDetailsPage));
         }
     }
 }

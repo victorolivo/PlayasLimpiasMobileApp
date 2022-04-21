@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:PlayasLimpiasApp.ViewModels"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:model="clr-namespace:PlayasLimpiasApp.Models"
+             x:Class="PlayasLimpiasApp.Views.MyEventsPage"
+             BackgroundColor="Beige"
+             x:DataType="viewmodels:MyEventsViewModel"
+             x:Name="MyEventsPageDesignName">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MyEventsViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ItemSelectedEventArgsConverter x:Key="argConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="Events" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
+
+            <ListView ItemsSource="{Binding MyEvents}" 
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      RefreshControlColor="Chocolate"
+                      SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
+
+                <ListView.Behaviors>
+                    <xct:EventToCommandBehavior
+                        EventName="ItemSelected"
+                        Command="{Binding SelectedCommand}"
+                        EventArgsConverter="{StaticResource argConverter}"/>
+                </ListView.Behaviors>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Event">
+                        <ViewCell>
+
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Volunteer For This Event"
+                                          Command="{Binding
+                                    Source={x:Reference EventsPageDesignName},
+                                    Path=BindingContext.VolunteerCommand}"
+                                          CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+
+                            <Grid Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Padding="0" CornerRadius="6" IsClippedToBounds="True">
+                                        <Image Source="{Binding Image}" WidthRequest="100"/>
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="20"/>
+                                        <Label Text="{Binding Location}"/>
+                                        <Label Text="{Binding Id}" FontSize="Small"/>
+                                    </StackLayout>
+                                    <Button Text="Volunteer" 
+                                            VerticalOptions="Center" 
+                                            HorizontalOptions="EndAndExpand"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:EventsViewModel}},
+                                            Path=VolunteerCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </StackLayout>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Button Text="Load More" HorizontalOptions="CenterAndExpand" Margin="20"/>
+                </ListView.Footer>
+            </ListView>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

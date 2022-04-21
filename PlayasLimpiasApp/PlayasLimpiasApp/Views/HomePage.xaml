@@ -27,8 +27,8 @@
                 FontSize="80" TextColor="BlanchedAlmond" FontFamily="omegle"/>
 
 
-                <StackLayout Orientation="Horizontal" Margin="20,100" Grid.Row="2">
-                    <Button Text="Nominate a Beach for rescue"/>
+                <StackLayout Orientation="Horizontal" Margin="20,100" Grid.Row="2" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2">
+                    <Button Margin="0,0,40,0"  Text="Rescue a Beach" Clicked="Button_Clicked"/>
                     <Button Text="View Events"/>
                 </StackLayout>
 
