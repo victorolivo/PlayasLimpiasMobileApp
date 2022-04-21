@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlayasLimpiasApp.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <Color x:Key="Primary">PapayaWhip</Color>
+            <Style TargetType="Button">
+                <Setter Property="BorderColor" Value="Wheat"/>
+                <Setter Property="TextColor" Value="FloralWhite"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="Opacity" Value=".5"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="CornerRadius" Value="8"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="HeaderLBL">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="Wheat"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="FontFamily" Value="omegle"/>
+            </Style>
+            
+            
+            
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>
