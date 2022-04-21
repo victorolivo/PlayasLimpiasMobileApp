@@ -67,19 +67,19 @@ namespace PlayasLimpiasApp.ViewModels
             }
         }
 
-        //private async Task loadSample()
-        //{
-        //    Event e = new Event("Playa Sucia", "db1", "Fajardo", 3, DateTime.Now);
-        //    Event ev = new Event("Playa Sucia", "db2", "Fajardo", 3, DateTime.Now);
-        //    Events.Add(e);
-        //    Events.Add(ev);
-        //    Events.Add(e);
-        //    Events.Add(ev);
-        //    Events.Add(e);
-        //    Events.Add(ev);
-        //    Events.Add(e);
-        //    Events.Add(ev);
-        //}
+        private async Task loadSample()
+        {
+            Event e = new Event { 
+                Name = "Playa en Fajardo necesita ayuda",
+                Image = "db1",
+                Location = "Fajardo, PR",
+                NumVolunteersReq = 18,
+                Deadline = DateTime.Now
+            };
+
+            await PlayasLimpiasDB.AddEvent(e);
+            
+        }
 
         private async Task Add()
         {

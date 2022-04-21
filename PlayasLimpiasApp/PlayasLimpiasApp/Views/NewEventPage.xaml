@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlayasLimpiasApp.Views.NewEventPage">
+             x:Class="PlayasLimpiasApp.Views.NewEventPage"
+             BackgroundColor="Beige">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Beach Rescue" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
+            <Label Text="Create an event to give more people the opportunity to volunteer and help keep our coast line clean." Style="{StaticResource NText}"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

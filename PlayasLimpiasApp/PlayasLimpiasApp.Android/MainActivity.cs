@@ -19,7 +19,7 @@ namespace PlayasLimpiasApp.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            this.SetStatusBarColor((Xamarin.Forms.Color.PapayaWhip).ToAndroid());
+            this.SetStatusBarColor((Xamarin.Forms.Color.Black).ToAndroid());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

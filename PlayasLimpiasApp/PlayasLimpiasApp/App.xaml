@@ -8,15 +8,17 @@
     <Application.Resources>
         <ResourceDictionary>
             
-            <Color x:Key="Primary">PapayaWhip</Color>
+            <Color x:Key="Primary">Wheat</Color>
+            
             <Style TargetType="Button">
                 <Setter Property="BorderColor" Value="Wheat"/>
-                <Setter Property="TextColor" Value="FloralWhite"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
-                <Setter Property="Opacity" Value=".5"/>
-                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="Wheat"/>
+                <Setter Property="Opacity" Value=".6"/>
+                <Setter Property="BorderWidth" Value="2"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
             <Style TargetType="Label" x:Key="HeaderLBL">
@@ -25,7 +27,13 @@
                 <Setter Property="FontSize" Value="40"/>
                 <Setter Property="FontFamily" Value="omegle"/>
             </Style>
-            
+
+            <Style TargetType="Label" x:Key="NText">
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="TextColor" Value="Chocolate" />
+                <Setter Property="FontFamily" Value="kg"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
             
             
         </ResourceDictionary>        
