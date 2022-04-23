@@ -19,13 +19,14 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Create New Event" Command="{Binding AddCommand}"/>
+        <ToolbarItem Text="Create New Event  " Command="{Binding AddCommand}"/>
+        <ToolbarItem IconImageSource="Home_icon_black" Clicked="ToolbarItem_Clicked" x:Name="HomeIcon"/>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Events" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15"/>
+            <Label Text="Events" Style="{StaticResource HeaderLBL}" TextColor="#292424" Margin="15" x:Name="Header"/>
 
             <ListView ItemsSource="{Binding Events}" 
                       HasUnevenRows="True"
@@ -47,10 +48,15 @@
                         <ViewCell>
 
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Volunteer For This Event"
+                                <MenuItem Text="Volunteer"
                                           Command="{Binding
                                     Source={x:Reference EventsPageDesignName},
                                     Path=BindingContext.VolunteerCommand}"
+                                          CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Delete"
+                                          Command="{Binding
+                                    Source={x:Reference EventsPageDesignName},
+                                    Path=BindingContext.RemoveCommand}"
                                           CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
 
@@ -84,7 +90,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Footer>
-                    <Button Text="My Events" HorizontalOptions="CenterAndExpand" Margin="20" Clicked="Button_Clicked"/>
+                    <Button Text="My Events" HorizontalOptions="CenterAndExpand" Margin="20" Clicked="Button_Clicked" x:Name="MyEventsBtn"/>
                 </ListView.Footer>
             </ListView>
             

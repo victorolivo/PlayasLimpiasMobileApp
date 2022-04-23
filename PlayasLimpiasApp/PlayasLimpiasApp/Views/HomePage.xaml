@@ -4,7 +4,7 @@
              x:Class="PlayasLimpiasApp.Views.HomePage"
              BackgroundImageSource="backgroung2" >
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView x:Name="homePage">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8"/>
@@ -20,7 +20,8 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"  Grid.Row="1" Grid.ColumnSpan="2"
                 FontSize="60" TextColor="AliceBlue" Margin="70"
-                 FontFamily="omegle"/>
+                 FontFamily="omegle"
+                       x:Name="StartOfPage"/>
                 <Label Text="Limpias"
                 VerticalTextAlignment="End"
                 HorizontalTextAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="2"
@@ -32,18 +33,25 @@
                     <Button Text="View Events" Clicked="Button_Clicked_1"/>
                 </StackLayout>
 
-                <StackLayout Grid.Row="3" Grid.ColumnSpan="2" Margin="0,50,0,30">
+                <StackLayout Grid.Row="3" Grid.ColumnSpan="2" Margin="0,50,0,20">
                     <Label Text="About us" Style="{StaticResource HeaderLBL}"/>
                 </StackLayout>
 
-                <Frame Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,50" Opacity=".9" BackgroundColor="#CC000000" CornerRadius="5">
-                    <Label Text="Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum Lorem ipsum Loren ipsum lorem ipsum lorem ipsum lorem ipsum" 
-                           FontFamily="kg" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Wheat" FontSize="16"/>
+                <StackLayout Grid.Row="3" Grid.ColumnSpan="2" Margin="0,50,0,20">
+                    <Button WidthRequest="200" Opacity="0" x:Name="About" Clicked="About_Clicked"/>
+                </StackLayout>
+
+                <Frame Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0" Opacity=".9" BackgroundColor="#CC000000" CornerRadius="5">
+                    <Label Text="It's our duty to protect our coastline, every year around 2.6 million pounds of trash is left at our beaches by both locals and tourists. 
+                           What happens when you litter on the beach? 
+                           Is not just ugly, it can harm ocean ecosystems, wildlife, and humans. It can injure coral reefs and bottom-dwelling species and entangle or drown ocean wildlife. 
+                           Some marine animals ingest smaller plastic particles and choke or starve." 
+                           FontFamily="kg" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Wheat" FontSize="14"/>
                 </Frame>
                 
-                <StackLayout Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
-                        <Frame Padding="0" CornerRadius="100" Margin="8,50,0,10" Grid.Row="2" IsClippedToBounds="True" BorderColor="Black" Background="black">
+                <StackLayout Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="0">
+                    <StackLayout Orientation="Horizontal" Margin="0">
+                        <Frame Padding="0" CornerRadius="100" Margin="8,40,0,10" Grid.Row="2" IsClippedToBounds="True" BorderColor="Black" Background="black">
                             <StackLayout Orientation="Horizontal" IsClippedToBounds="True">
                                 <Image Source="user" Aspect="AspectFit" WidthRequest="100"/>
                             </StackLayout>
@@ -52,8 +60,9 @@
 
                     </StackLayout>
                 </StackLayout>
-                <StackLayout Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand">
-                    <Label Margin="0,0,0,30" Text="Mantengamos nuestras playas limpias" FontFamily="kg" FontSize="25" HorizontalTextAlignment="Center" TextColor="PapayaWhip"/>
+                <StackLayout Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" x:Name="EndOfPage">
+                    <Label Margin="0,0,0,10" Text="Mantengamos nuestras playas limpias" FontFamily="kg" FontSize="25" HorizontalTextAlignment="Center" TextColor="PapayaWhip" x:Name="Label"/>
+                    <Button Text="Back to top" Margin="2" HeightRequest="35" Opacity=".5" BackgroundColor="Transparent" TextColor="AliceBlue" x:Name="toTopBtn" Clicked="toTopBtn_Clicked"/>
                 </StackLayout>
                 
 

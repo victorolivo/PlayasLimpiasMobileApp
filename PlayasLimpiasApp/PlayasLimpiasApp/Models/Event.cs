@@ -18,7 +18,7 @@ namespace PlayasLimpiasApp.Models
         public string Image { get; set; } = "db1";
         public string Location { get; set; }
         public int NumVolunteersReq { get; set; }
-        public bool AmIvolunteer { get; set; } = false;
+        public bool AmIvolunteer { get; set; }
         public DateTime Deadline { get; set; }
 
         //UI Helper property

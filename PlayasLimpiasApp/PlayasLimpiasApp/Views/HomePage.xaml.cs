@@ -28,5 +28,15 @@ namespace PlayasLimpiasApp.Views
             var route = $"{nameof(EventsPage)}";
             await Shell.Current.GoToAsync(route);
         }
+
+        private void About_Clicked(object sender, EventArgs e)
+        {
+            homePage.ScrollToAsync(EndOfPage, ScrollToPosition.Center, true);
+        }
+
+        private void toTopBtn_Clicked(object sender, EventArgs e)
+        {
+            homePage.ScrollToAsync(StartOfPage, ScrollToPosition.Center, true);
+        }
     }
 }

@@ -23,6 +23,10 @@ namespace PlayasLimpiasApp.Views
             await Shell.Current.GoToAsync(route);
         }
 
-
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            var route = $"///{nameof(HomePage)}";
+            await Shell.Current.GoToAsync(route);
+        }
     }
 }

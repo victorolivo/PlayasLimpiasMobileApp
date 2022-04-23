@@ -123,7 +123,10 @@ namespace PlayasLimpiasApp.ViewModels
                 return;
 
             SelectedEvent = null;
-
+            string volunteerMessage = e.AmIvolunteer ? "You are currentlly a volunteer for this event, THANKS!" : "Please consider volunteering for this event :)";
+            await Application.Current.MainPage.DisplayAlert($"{e.Name}", $"Volunteers required for this rescue: {e.NumVolunteersReq}\n\n" +
+                $"Date: {e.DateFormatted}\n\n" +
+                $"Location: {e.Location}\n\n {volunteerMessage}", "Ok");
 
         }
     }
