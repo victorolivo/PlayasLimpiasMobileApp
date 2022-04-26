@@ -11,11 +11,11 @@ namespace PlayasLimpiasApp.ViewModels
     public class NewEventViewModel : BindableObject
     {
         public string Name { get; set; }
-        public string Image { get; set; } = "db1";
+        public string Image { get; set; } = "";
         public string Location { get; set; }
-        public int NumVolunteersReq { get; set; } = 3;
+        public int NumVolunteersReq { get; set; } = 10;
         public DateTime Deadline { get; set; } = DateTime.Now;
-        public bool AmIvolunteer { get; set; } = false;
+        public bool AmIvolunteer { get; set; } = true;
 
         public AsyncCommand SaveCommand { get; }
 

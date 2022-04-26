@@ -120,7 +120,9 @@ namespace PlayasLimpiasApp.ViewModels
                 return;
 
             SelectedEvent = null;
-
+            await Application.Current.MainPage.DisplayAlert($"{e.Name}", $"Volunteers required for this rescue: {e.NumVolunteersReq}\n\n" +
+                $"Date: {e.DateFormatted}\n\n" +
+                $"Location: {e.Location}", "Ok");
 
         }
     }
