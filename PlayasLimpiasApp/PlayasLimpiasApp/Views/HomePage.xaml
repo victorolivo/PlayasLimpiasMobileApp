@@ -41,7 +41,7 @@
                     <Button WidthRequest="200" Opacity="0" x:Name="About" Clicked="About_Clicked"/>
                 </StackLayout>
 
-                <Frame Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0" Opacity=".9" BackgroundColor="#CC000000" CornerRadius="5">
+                <Frame Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,0" Opacity=".8" BackgroundColor="#CC000000" CornerRadius="5">
                     <Label Text="It's our duty to protect our coastline, every year around 2.6 million pounds of trash is left at our beaches by both locals and tourists. 
                            What happens when you litter on the beach? 
                            Is not just ugly, it can harm ocean ecosystems, wildlife, and humans. It can injure coral reefs and bottom-dwelling species and entangle or drown ocean wildlife. 
@@ -62,7 +62,11 @@
                 </StackLayout>
                 <StackLayout Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" x:Name="EndOfPage">
                     <Label Margin="0,0,0,10" Text="Mantengamos nuestras playas limpias" FontFamily="kg" FontSize="25" HorizontalTextAlignment="Center" TextColor="PapayaWhip" x:Name="Label"/>
-                    <Button Text="Back to top" Margin="2" HeightRequest="35" Opacity=".5" BackgroundColor="Transparent" TextColor="AliceBlue" x:Name="toTopBtn" Clicked="toTopBtn_Clicked"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Back to top" Margin="2" HeightRequest="35" Opacity=".7" BackgroundColor="Transparent" TextColor="AliceBlue" x:Name="toTopBtn" Clicked="toTopBtn_Clicked"/>
+                        <Button Text="Learn More" Margin="2" HeightRequest="35" Opacity=".7" BackgroundColor="Transparent" TextColor="AliceBlue" x:Name="learnMoreBtn" Clicked="learnMoreBtn_Clicked"/>
+                    </StackLayout>
+                   
                 </StackLayout>
                 
 

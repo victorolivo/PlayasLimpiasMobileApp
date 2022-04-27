@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace PlayasLimpiasApp.Views
 {
@@ -37,6 +38,11 @@ namespace PlayasLimpiasApp.Views
         private void toTopBtn_Clicked(object sender, EventArgs e)
         {
             homePage.ScrollToAsync(StartOfPage, ScrollToPosition.Center, true);
+        }
+
+        private void learnMoreBtn_Clicked(object sender, EventArgs e)
+        {
+            Browser.OpenAsync("https://www.paralanaturaleza.org/limpieza-de-playas/");
         }
     }
 }
