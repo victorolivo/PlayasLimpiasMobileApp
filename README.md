@@ -1,7 +1,6 @@
 # Playas Limpias Mobile Application
 
-Mobile application with Xamarin.Forms. The project is a "Beach Rescue app", anyone with the app can report a coastline in need, and create events to gather volunteers and rescue said area. (Trash cleanup from natural resources mainly). This project was part of my MSSA project#2: 'Playas Limpias Mobile App'
-Dove into mobile development this time. I really enjoyed and learned a lot making this project.
+Mobile application with Xamarin.Forms. The project is a "Beach Rescue app", anyone with the app can report a coastline in need, and create events to gather volunteers and rescue said area (Trash cleanup).
 
 # Idea Origin
 
